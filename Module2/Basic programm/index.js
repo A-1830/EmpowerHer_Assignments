@@ -17,3 +17,13 @@ function Primenumber(num)
                 }
 }
 console.log(Primenumber(num));
+//<!--check even odd-->
+
+
+let num = 10;
+
+if (num % 2 === 0) {
+    console.log(num + " is Even");
+} else {
+    console.log(num + "is odd")
+}
