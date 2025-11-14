@@ -11,3 +11,22 @@ function signup(username) {
 }
 console.log(signup("anusha"));
 console.log(signup("anusha"));
+
+//login//
+let users = [
+    { username: "anusha", password: "EMP@123" }
+];  
+
+function login(username, password) {
+let user = users.find(user => user.username === username);
+if (!user) {
+        return "User Not Found, Please Signup!";
+    } else if (user.password === password) {
+        return "Login Successful!";
+    } else {
+        return "Password is Incorrect!";
+    }
+}
+console.log(login("anusha", "EMP@123"));
+console.log(login("anusha", "wrongpass"));
+console.log(login("unknown", "EMP@123"));
