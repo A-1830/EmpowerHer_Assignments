@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARABOINA ANUSHA Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#home" class="nav-logo">Anusha</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header / Home Section -->
+    <header id="home">
+        <div class="container header-content">
+            <img src="profile.jpg" alt="MARABOINA ANUSHA" class="profile-pic">
+            <h1>MARABOINA ANUSHA</h1>
+            <p>A focused and enthusiastic learner committed to delivering quality work.</p>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <p>A focused and enthusiastic learner who is committed to improving skills and delivering quality work with consistency.</p>
+        <h3>Education</h3>
+        <p>Bachelor of Technology (Information Technology), Kakatiya University, Warangal<br>
+        Graduation Expected: May 2026 | CGPA: 8.54</p>
+        <h3>Experience</h3>
+        <p>Fresher</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="fade-in">
+        <h2>Skills</h2>
+        <ul>
+            <li><strong>Programming Languages:</strong> Python, Java (Basic OOP), HTML, CSS</li>
+            <li><strong>Database:</strong> SQL</li>
+            <li><strong>Tools:</strong> VS Code, Google Colab</li>
+            <li><strong>MS Office:</strong> Word, Excel, PowerPoint</li>
+            <li><strong>Other Skills:</strong> Communication, Teamwork, Problem Solving, Adaptability</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Anti-Ragging Application</h3>
+            <p>A real-time safety and reporting system designed to protect students by enabling instant reporting of ragging incidents.</p>
+            <ul>
+                <li>Sent emergency alerts to authorities, reducing response time during emergencies.</li>
+                <li>Improved awareness and safety measures among students and authorities.</li>
+            </ul>
+            <a href="https://github.com/A-1830" target="_blank" class="btn">View on GitHub</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+        <h2>Contact Me</h2>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:anushamaraboina2004@gmail.com">anushamaraboina2004@gmail.com</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/anusha-maraboina-aa2970387/" target="_blank">View Profile</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/A-1830" target="_blank">View Profile</a></li>
+        </ul>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 MARABOINA ANUSHA. All rights reserved.</p>
+    </footer>
+
+    <!-- Smooth Scrolling & Fade-in Animation -->
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in sections
+        const faders = document.querySelectorAll('.fade-in');
+        const options = { threshold: 0.1 };
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, options);
+
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+</body>
+</html>
